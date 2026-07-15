@@ -14,8 +14,8 @@ Error generating stack: `+o.message+`
 .dimmer{position:absolute;inset:0;background:rgba(10,12,24,0.6);}
 .scan{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(to bottom, transparent 0 3px, rgba(0,0,0,0.12) 3px 5px);}
 
-.titleUI{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:20px;}
-.hud{position:absolute;top:14px;left:0;right:0;display:flex;justify-content:space-between;padding:0 16px;font-family:'Press Start 2P',monospace;font-size:8px;color:#F2EAD9;text-shadow:2px 2px 0 #000;opacity:0.9;}
+.titleUI{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:calc(20px + env(safe-area-inset-top)) 20px calc(20px + env(safe-area-inset-bottom));}
+.hud{position:absolute;top:calc(14px + env(safe-area-inset-top));left:0;right:0;display:flex;justify-content:space-between;padding:0 16px;font-family:'Press Start 2P',monospace;font-size:8px;color:#F2EAD9;text-shadow:2px 2px 0 #000;opacity:0.9;}
 .logoBlock{text-align:center;margin-top:-30px;}
 .logo{font-family:'Press Start 2P',monospace;font-size:clamp(17px,5.6vw,28px);color:#EFA35C;text-shadow:3px 3px 0 #000, 5px 5px 0 rgba(0,0,0,0.35);letter-spacing:1px;}
 .logoSub{font-size:20px;color:#F2EAD9;text-shadow:2px 2px 0 #000;margin-top:10px;letter-spacing:1px;}
@@ -38,7 +38,7 @@ Error generating stack: `+o.message+`
 .worldShade{position:absolute;inset:0;background:linear-gradient(to top, rgba(10,12,24,0.78), rgba(10,12,24,0) 55%);pointer-events:none;}
 .worldName{position:absolute;left:18px;bottom:28px;font-family:'Press Start 2P',monospace;font-size:15px;color:#F2EAD9;text-shadow:3px 3px 0 #000;pointer-events:none;}
 .worldHint{position:absolute;left:18px;bottom:11px;font-family:'Press Start 2P',monospace;font-size:7px;color:#EFA35C;text-shadow:2px 2px 0 #000;opacity:0.9;pointer-events:none;}
-.worldsBack{position:absolute;top:12px;left:12px;z-index:4;background:rgba(14,17,32,0.82);border:2px solid #F2EAD9;color:#F2EAD9;font-family:'Press Start 2P',monospace;font-size:8px;padding:8px 10px;cursor:pointer;}
+.worldsBack{position:absolute;top:calc(12px + env(safe-area-inset-top));left:12px;z-index:4;background:rgba(14,17,32,0.82);border:2px solid #F2EAD9;color:#F2EAD9;font-family:'Press Start 2P',monospace;font-size:8px;padding:8px 10px;cursor:pointer;}
 .worldsBack:hover{color:#EFA35C;border-color:#EFA35C;}
 
 .desk{position:absolute;inset:0;overflow-y:auto;background:repeating-linear-gradient(90deg, rgba(0,0,0,0.10) 0 2px, rgba(0,0,0,0) 2px 88px), linear-gradient(#5A4430, #4A3624);}
@@ -52,13 +52,13 @@ Error generating stack: `+o.message+`
 .pcLost{filter:grayscale(0.85) brightness(0.92);}
 .slicePreview{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
 
-.detailHead{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;gap:12px;padding:12px;background:linear-gradient(rgba(10,12,24,0.85), rgba(10,12,24,0));z-index:5;}
+.detailHead{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;gap:12px;padding:12px;padding-top:calc(12px + env(safe-area-inset-top));background:linear-gradient(rgba(10,12,24,0.85), rgba(10,12,24,0));z-index:5;}
 .detailBack{position:static;}
 .detailTitle{font-family:'Press Start 2P',monospace;font-size:13px;color:#EFA35C;text-shadow:2px 2px 0 #000;flex:1;}
 .logBtn{background:rgba(14,17,32,0.82);border:2px solid #F2EAD9;color:#F2EAD9;font-family:'Press Start 2P',monospace;font-size:8px;padding:8px 10px;cursor:pointer;}
 .logBtn:hover{color:#EFA35C;border-color:#EFA35C;}
 .logPanel{position:absolute;inset:0;padding:64px 14px 20px;overflow-y:auto;background:rgba(10,12,24,0.9);z-index:4;}
-.monthBadge{position:absolute;top:12px;right:12px;z-index:4;font-family:'Press Start 2P',monospace;font-size:8px;color:#F2EAD9;background:rgba(14,17,32,0.82);border:2px solid #F2EAD9;padding:8px 10px;}
+.monthBadge{position:absolute;top:calc(12px + env(safe-area-inset-top));right:12px;z-index:4;font-family:'Press Start 2P',monospace;font-size:8px;color:#F2EAD9;background:rgba(14,17,32,0.82);border:2px solid #F2EAD9;padding:8px 10px;}
 .monthRow{display:flex;align-items:center;gap:10px;width:100%;background:#161B30;border:2px solid #2A3550;color:#F2EAD9;font-family:'Press Start 2P',monospace;font-size:8px;padding:12px 10px;cursor:pointer;margin-top:10px;text-align:left;box-sizing:border-box;}
 .monthRow:hover{border-color:#EFA35C;}
 .monthName{flex:1;color:#EFA35C;line-height:1.5;}
@@ -68,10 +68,10 @@ Error generating stack: `+o.message+`
 .fameRow{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #2A3550;padding:9px 2px;font-family:'Press Start 2P',monospace;font-size:7px;line-height:1.7;}
 .fameL{color:#8B96AE;flex-shrink:0;}
 .fameV{color:#F2EAD9;text-align:right;}
-.toggles{position:absolute;bottom:14px;right:14px;z-index:4;display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
-.sessionToggles{bottom:auto;top:14px;}
+.toggles{position:absolute;bottom:calc(14px + env(safe-area-inset-bottom));right:14px;z-index:4;display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
+.sessionToggles{bottom:auto;top:calc(14px + env(safe-area-inset-top));}
 .sessionToggles .soundBtn{font-size:7px;padding:6px 8px;opacity:0.85;}
-.dataBtns{position:absolute;bottom:14px;left:14px;z-index:4;display:flex;flex-direction:column;gap:8px;align-items:flex-start;}
+.dataBtns{position:absolute;bottom:calc(14px + env(safe-area-inset-bottom));left:14px;z-index:4;display:flex;flex-direction:column;gap:8px;align-items:flex-start;}
 .dataMsg{font-family:'VT323',monospace;font-size:16px;color:#9DBB8F;text-shadow:2px 2px 0 #000;}
 .soundBtn{background:rgba(14,17,32,0.82);border:2px solid #F2EAD9;color:#F2EAD9;font-family:'Press Start 2P',monospace;font-size:8px;padding:8px 10px;cursor:pointer;}
 .soundBtn:hover{color:#EFA35C;border-color:#EFA35C;}
@@ -117,7 +117,7 @@ Error generating stack: `+o.message+`
 .scene{display:block;width:100%;height:auto;}
 .bgscene{position:absolute;inset:0;width:100%;height:100%;}
 
-.sessionUI{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:26px 16px;pointer-events:none;text-align:center;}
+.sessionUI{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:calc(40px + env(safe-area-inset-top)) 16px calc(26px + env(safe-area-inset-bottom));pointer-events:none;text-align:center;}
 .sessionUI button,.sessionUI .panel{pointer-events:auto;}
 .sessionTop{display:flex;flex-direction:column;align-items:center;gap:4px;}
 .sessionTop .timer{margin-top:0;}
@@ -125,7 +125,7 @@ Error generating stack: `+o.message+`
 .questBox{background:rgba(14,17,32,0.65);padding:4px 14px;border:2px solid rgba(242,234,217,0.35);}
 .hudLine{margin-top:2px;text-shadow:2px 2px 0 #000;}
 
-.resultUI{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);width:min(380px,92vw);background:rgba(14,17,32,0.92);border:3px solid #F2EAD9;box-shadow:6px 6px 0 rgba(0,0,0,0.55);padding:16px;text-align:center;box-sizing:border-box;}
+.resultUI{position:absolute;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translateX(-50%);width:min(380px,92vw);background:rgba(14,17,32,0.92);border:3px solid #F2EAD9;box-shadow:6px 6px 0 rgba(0,0,0,0.55);padding:16px;text-align:center;box-sizing:border-box;}
 .resultUI .resTitle{font-size:15px;margin-top:2px;}
 .resultUI .resSub{font-size:19px;margin-top:8px;}
 .resultUI .startBtn{margin-top:14px;}
